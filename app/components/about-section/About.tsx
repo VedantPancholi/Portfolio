@@ -5,8 +5,44 @@ import { useView } from "@/contexts/ViewContext";
 import { useInView } from "react-intersection-observer";
 import AnimatedBody from "../ui/AnimatedBody";
 import AnimatedTitle from "../ui/AnimatedTitle";
+import { motion } from 'framer-motion';
+import { FaPython, FaAws, FaCloud, FaTools, FaRobot, FaDatabase, FaCode } from 'react-icons/fa';
+import { SiTensorflow, SiPytorch, SiScikitlearn, SiFastapi, SiReact, SiFlutter, SiJavascript, SiHtml5, SiCss3, SiTailwindcss, SiGit, SiGithub, SiPostman, SiSelenium, SiTableau } from 'react-icons/si';
 
 const syne = Syne({ subsets: ["latin"] });
+
+const skillCategories = [
+  {
+    title: 'Programming Languages',
+    icon: <FaCode className="text-xl text-blue-400" />,
+    skills: ['Python', 'C++', 'Dart', 'JavaScript'],
+  },
+  {
+    title: 'Web & App Development',
+    icon: <SiReact className="text-xl text-cyan-400" />,
+    skills: ['React.js', 'Flutter', 'HTML', 'CSS', 'Tailwind', 'REST API'],
+  },
+  {
+    title: 'Frameworks & Libraries',
+    icon: <SiTensorflow className="text-xl text-yellow-400" />,
+    skills: ['FastAPI', 'Flask', 'Scikit-learn', 'Pandas', 'NumPy', 'Seaborn', 'TensorFlow', 'PyTorch'],
+  },
+  {
+    title: 'Machine Learning & AI',
+    icon: <FaRobot className="text-xl text-purple-400" />,
+    skills: ['Supervised Learning', 'Feature Engineering', 'GridSearchCV', 'Aspect-Based Sentiment Analysis', 'Hugging Face Transformers', 'Sentence-BERT', 'spaCy', 'LangChain', 'Pinecone', 'RAG'],
+  },
+  {
+    title: 'Deployment & Cloud',
+    icon: <FaCloud className="text-xl text-indigo-400" />,
+    skills: ['AWS EC2', 'Nginx', 'Redis', 'Git', 'GitHub', 'Postman API'],
+  },
+  {
+    title: 'Tools & Others',
+    icon: <FaTools className="text-xl text-pink-400" />,
+    skills: ['WinSCP', 'Selenium', 'Tableau'],
+  },
+];
 
 export default function About() {
   const { setSectionInView } = useView();
@@ -27,27 +63,24 @@ export default function About() {
         charSpace={"mr-[0.001em]"}
         className={`${syne.className} antialiased text-4xl md:text-5xl xl:text-6xl font-bold opacity-80`}
       >
-        Fill the gaps, stay liquid —because intelligence is about adaptability.
+        About Me
       </AnimatedTitle>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[8.5fr_3.5fr] gap-8 mt-6">
-        <div className="grid grid-cols-1 antialiased gap-6 text-white/80 text-xl md:text-2xl">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr] gap-8 mt-6">
+        {/* About Us Section */}
+        <div className="grid grid-cols-1 antialiased gap-6 text-white/80 text-xl md:text-2xl mb-8">
           <AnimatedBody className="leading-[34px] md:leading-[39px]">
-            I am an enthusiastic Computer Science student with expertise in Machine Learning, Deep Learning, and Data Science 🤖. My work includes developing innovative solutions like AgriExpert, an AI-powered multilingual chatbot 🌱 designed for farmers, and implementing a Lightweight U-Net for brain tumor segmentation, achieving high accuracy 🧠.
+          I&apos;m Vedant Pancholi — a passionate Computer Science student, Machine Learning engineer, and builder of intelligent systems that solve real-world problems. My journey blends deep curiosity with real-world impact, from building AI-powered solutions to deploying them at scale.
           </AnimatedBody>
           <AnimatedBody className="leading-[34px] md:leading-[39px]">
-            I bring hands-on experience in Flutter, C++, Tableau, and Linux, and have participated in multiple hackathons 🏆, where I refined my problem-solving and teamwork abilities. My professional journey spans impactful internships and freelance projects, where I contributed practical, industry-ready solutions.
-            Passionate about solving real-world problems, I am eager to leverage my skills to drive innovation and contribute to the tech industry&apos;s growth 🚀.
+            With expertise in Machine Learning, Deep Learning, NLP, and MLOps, I&apos;ve developed systems like RevSense, a full-stack sentiment analytics platform that leverages LLMs, BERT, Redis, and real-time automation to turn customer feedback into business intelligence. I&apos;ve also developed AgriExpert, a multilingual AI chatbot using RAG for farmers, and implemented a Lightweight U-Net model for brain tumor segmentation in healthcare research.
           </AnimatedBody>
           <AnimatedBody className="inline leading-[34px] md:leading-[39px]">
-            Each challenge is unique so I ensure that I learn and grow through
-            each one ensuring that I not only put in my best but also deliver
-            solutions that businesses are proud to call their own. Wanna learn
-            more? Here&apos;s <br className="hidden md:block" />
+          My toolkit includes Python, FastAPI, Docker, AWS, Redis, spaCy, Sentence Transformers, XGBoost, and more. Whether it's scraping web data with Selenium, deploying ML models on AWS EC2, or designing interactive dashboards, I'm driven by the thrill of solving problems and shipping solutions that work in the wild. I&apos;ve learned through hackathons, research, and hands-on deployments that the future belongs to those who build — Here&apos;s{' '}
             <Link
               className="underline"
               href={
-                "https://drive.google.com/file/d/1m4KJcD_Jy8jEV6KJe97G2OMCCd7KW1Zp/view?usp=sharing"
+                "https://drive.google.com/file/d/1Aj6nbisZgdq2ulx7XPgHY5lnubgWyHZ7/view?usp=sharing"
               }
             >
               MY RéSUMè
@@ -56,56 +89,50 @@ export default function About() {
           </AnimatedBody>
         </div>
 
-        <div className="grid grid-cols-1 gap-4">
-          <div>
-            <AnimatedTitle
-              wordSpace={"mr-[0.5ch]"}
-              charSpace={"mr-[0.001em]"}
-              className="font-bold antialiased text-xl md:text-2xl mb-2"
-            >
-              Data Science & Analytics
-            </AnimatedTitle>
-            <AnimatedBody className="text-white/60 text-base md:text-xl leading-8">
-              Python, SQL, Pandas, NumPy, Seaborn, Matplotlib, Tableau, MySQL.
-            </AnimatedBody>
+        
+        {/* Skills Section - Professional ML Engineer Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl p-10 max-w-5xl mx-auto mt-10 border border-white/20"
+        >
+          <AnimatedTitle
+            wordSpace={"mr-[14px]"}
+            charSpace={"mr-[0.001em]"}
+            className={`${syne.className} antialiased text-4xl md:text-5xl xl:text-6xl font-bold opacity-80 mb-8`}
+          >
+            Skills
+          </AnimatedTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {skillCategories.map((cat, idx) => (
+              <motion.div
+                key={cat.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * idx }}
+                viewport={{ once: true }}
+                className="mb-2"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  {cat.icon}
+                  <span className="font-semibold text-lg text-white">{cat.title}</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {cat.skills.map(skill => (
+                    <span
+                      key={skill}
+                      className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full px-3 py-1 text-xs font-medium shadow hover:scale-105 transition-transform"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
-          <div>
-            <AnimatedTitle
-              wordSpace={"mr-[0.5ch]"}
-              charSpace={"mr-[0.001em]"}
-              className="font-bold antialiased text-xl md:text-2xl mb-2"
-            >
-              Machine Learning & AI
-            </AnimatedTitle>
-            <AnimatedBody className="text-white/60 text-base md:text-xl leading-8">
-              Scikit-learn, TensorFlow, PyTorch, LangChain, Pinecone, sentence-transformers, RAG, LLMs.
-            </AnimatedBody>
-          </div>
-          <div>
-            <AnimatedTitle
-              wordSpace={"mr-[0.5ch]"}
-              charSpace={"mr-[0.001em]"}
-              className="font-bold antialiased text-xl md:text-2xl mb-2"
-            >
-              Web & App Development
-            </AnimatedTitle>
-            <AnimatedBody className="text-white/60 text-base md:text-xl leading-8">
-              Flutter, Dart, JavaScript (ES6+), React.js,  Tailwind CSS, Firebase, Git/GitHub, Figma, Wireframing, REST API.
-            </AnimatedBody>
-          </div>
-          <div>
-            <AnimatedTitle
-              wordSpace={"mr-[0.5ch]"}
-              charSpace={"mr-[0.001em]"}
-              className="font-bold antialiased text-xl md:text-2xl mb-2"
-            >
-              Cloud & Deployment 
-            </AnimatedTitle>
-            <AnimatedBody className="text-white/60 text-base md:text-xl leading-8">
-              AWS EC2, AWS S3, AWS Sagemaker
-            </AnimatedBody>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

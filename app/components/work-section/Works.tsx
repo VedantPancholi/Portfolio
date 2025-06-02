@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import FolioCard from "./FolioCard";
 import Title from "../ui/Title";
 import { useView } from "@/contexts/ViewContext";
@@ -13,7 +13,18 @@ export default function Works() {
 
   const works = [
     {
+      title: "RevSense",
+      category: "ML",
+      gitLink: "https://github.com/VedantPancholi/RevSense",
+      // liveLink: "",
+      about:
+        "Revsense is an end-to-end AI-powered platform that extracts, processes, categorizes, and visualizes customer reviews from multi-source platforms to generate actionable business insights. It combines advanced NLP, real-time automation, and LLM-based reasoning to transform raw user feedback into strategic decision-making tools.",
+      stack: ["Python", "FastAPI", "spaCy", "HuggingFace Transformers", "sentence-transformers", "Redis", "Cron(Bash)", "Gemini"],
+      img: "/RevSense-2.jpg",
+    },
+    {
       title: "AgriExpert",
+      category: "ML",
       gitLink: "https://github.com/VedantPancholi/AgriExpert",
       // liveLink: "",
       about:
@@ -23,6 +34,7 @@ export default function Works() {
     },
     {
       title: "Brain-Tumor-Segmentation",
+      category: "ML",
       gitLink: "https://github.com/VedantPancholi/Brain-Tumor-Segmentation",
       // liveLink: "",
       about:
@@ -32,6 +44,7 @@ export default function Works() {
     },
     {
       title: "Resume Builder",
+      category: "Web",
       gitLink: "https://github.com/VedantPancholi/ResumeBuilder",
       // liveLink: "",
       about:
@@ -41,6 +54,7 @@ export default function Works() {
     },
     {
       title: "Sales Insights Dashboard for Hardware Supplier Company",
+      category: "Dashboard",
       gitLink: "https://github.com/VedantPancholi/Tableau_Dashboard",
       // liveLink: "",
       about:
@@ -49,6 +63,18 @@ export default function Works() {
       img: "/SID.png",
     },
   ];
+
+  const categories = ["All", "ML", "Web", "Dashboard"];
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [visibleCount, setVisibleCount] = useState(3);
+  const filteredWorks = selectedCategory === "All"
+    ? works
+    : works.filter(work => work.category === selectedCategory);
+
+  // Reset visibleCount when filter changes
+  React.useEffect(() => {
+    setVisibleCount(3);
+  }, [selectedCategory]);
 
   const { ref, inView } = useInView({
     threshold: 0.1,
@@ -66,7 +92,23 @@ export default function Works() {
       id="work"
     >
       <Title>Projects</Title>
-      {works.map((work, index) => (
+      <div className="flex gap-4 mb-8 flex-wrap">
+        {categories.map(cat => (
+          <button
+            key={cat}
+            onClick={() => setSelectedCategory(cat)}
+            className={`px-5 py-2 rounded-xl font-semibold border transition-all duration-200
+              border-white/20 backdrop-blur-sm
+              ${selectedCategory === cat
+                ? 'text-white underline underline-offset-4'
+                : 'text-white/25 hover:text-white hover:underline hover:underline-offset-4'}
+            `}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+      {filteredWorks.slice(0, visibleCount).map((work, index) => (
         <FolioCard
           key={index}
           img={work.img}
@@ -77,6 +119,16 @@ export default function Works() {
           stack={work.stack}
         />
       ))}
+      {visibleCount < filteredWorks.length && (
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={() => setVisibleCount(v => v + 3)}
+            className="px-6 py-2 rounded-xl font-semibold border border-white/20 backdrop-blur-sm text-white/80 hover:text-white hover:bg-white/10 transition-all duration-200 shadow"
+          >
+            Show More
+          </button>
+        </div>
+      )}
 
       <Timeline />
     </section>
