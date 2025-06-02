@@ -40,6 +40,12 @@ export default function MobileMenu({
         >
           About
         </Link>
+        <Link
+          href="#skills"
+          className={`${sectionInView === "skills" && "text-white"} w-fit`}
+        >
+          Skills
+        </Link>
         {/* <Link
           href="#contact"
           className={`${sectionInView === "contact" && "text-white"}  w-fit`}

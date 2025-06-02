@@ -91,48 +91,50 @@ export default function About() {
 
         
         {/* Skills Section - Professional ML Engineer Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl p-10 max-w-5xl mx-auto mt-10 border border-white/20"
-        >
-          <AnimatedTitle
-            wordSpace={"mr-[14px]"}
-            charSpace={"mr-[0.001em]"}
-            className={`${syne.className} antialiased text-4xl md:text-5xl xl:text-6xl font-bold opacity-80 mb-8`}
+        <div id="skills">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl p-10 max-w-5xl mx-auto mt-10 border border-white/20"
           >
-            Skills
-          </AnimatedTitle>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {skillCategories.map((cat, idx) => (
-              <motion.div
-                key={cat.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 * idx }}
-                viewport={{ once: true }}
-                className="mb-2"
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  {cat.icon}
-                  <span className="font-semibold text-lg text-white">{cat.title}</span>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {cat.skills.map(skill => (
-                    <span
-                      key={skill}
-                      className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full px-3 py-1 text-xs font-medium shadow hover:scale-105 transition-transform"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+            <AnimatedTitle
+              wordSpace={"mr-[14px]"}
+              charSpace={"mr-[0.001em]"}
+              className={`${syne.className} antialiased text-4xl md:text-5xl xl:text-6xl font-bold opacity-80 mb-8`}
+            >
+              Skills
+            </AnimatedTitle>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {skillCategories.map((cat, idx) => (
+                <motion.div
+                  key={cat.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 * idx }}
+                  viewport={{ once: true }}
+                  className="mb-2"
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    {cat.icon}
+                    <span className="font-semibold text-lg text-white">{cat.title}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {cat.skills.map(skill => (
+                      <span
+                        key={skill}
+                        className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full px-3 py-1 text-xs font-medium shadow hover:scale-105 transition-transform"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
