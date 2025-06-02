@@ -70,13 +70,13 @@ export default function About() {
         {/* About Us Section */}
         <div className="grid grid-cols-1 antialiased gap-6 text-white/80 text-xl md:text-2xl mb-8">
           <AnimatedBody className="leading-[34px] md:leading-[39px]">
-          I&apos;m Vedant Pancholi — a passionate Computer Science student, Machine Learning engineer, and builder of intelligent systems that solve real-world problems. My journey blends deep curiosity with real-world impact, from building AI-powered solutions to deploying them at scale.
+            I&apos;m Vedant Pancholi — a passionate Computer Science student, Machine Learning engineer, and builder of intelligent systems that solve real-world problems. My journey blends deep curiosity with real-world impact, from building AI-powered solutions to deploying them at scale.
           </AnimatedBody>
           <AnimatedBody className="leading-[34px] md:leading-[39px]">
             With expertise in Machine Learning, Deep Learning, NLP, and MLOps, I&apos;ve developed systems like RevSense, a full-stack sentiment analytics platform that leverages LLMs, BERT, Redis, and real-time automation to turn customer feedback into business intelligence. I&apos;ve also developed AgriExpert, a multilingual AI chatbot using RAG for farmers, and implemented a Lightweight U-Net model for brain tumor segmentation in healthcare research.
           </AnimatedBody>
           <AnimatedBody className="inline leading-[34px] md:leading-[39px]">
-          My toolkit includes Python, FastAPI, Docker, AWS, Redis, spaCy, Sentence Transformers, XGBoost, and more. Whether it's scraping web data with Selenium, deploying ML models on AWS EC2, or designing interactive dashboards, I'm driven by the thrill of solving problems and shipping solutions that work in the wild. I&apos;ve learned through hackathons, research, and hands-on deployments that the future belongs to those who build — Here&apos;s{' '}
+            My toolkit includes Python, FastAPI, Docker, AWS, Redis, spaCy, Sentence Transformers, XGBoost, and more. Whether it&apos;s scraping web data with Selenium, deploying ML models on AWS EC2, or designing interactive dashboards, I&apos;m driven by the thrill of solving problems and shipping solutions that work in the wild. I&apos;ve learned through hackathons, research, and hands-on deployments that the future belongs to those who build — Here&apos;s{' '}
             <Link
               className="underline"
               href={
