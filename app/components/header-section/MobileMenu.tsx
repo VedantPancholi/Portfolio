@@ -16,71 +16,80 @@ export default function MobileMenu({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="grid  z-10 items-center grid-cols-2 sm:hidden px-6 py-5 fixed top-12 rounded-2xl bg-gradient-to-r from-[#d9d9d91f]  max-w-[90%] w-full to-[#7373731f] mt-12 sm:mt-16 std-backdrop-blur"
+      className="fixed z-50 top-12 left-0 right-0 mx-auto w-[90%] sm:hidden"
     >
-      <ul
-        className="flex flex-col gap-4 lg:gap-12 text-white/25"
-        onClick={() => onMenuOpen(false)}
-      >
-        <Link
-          href="#home"
-          className={`${sectionInView === "home" && "text-white"} w-fit`}
-        >
-          Home
-        </Link>
-        <Link
-          href="#work"
-          className={`${sectionInView === "work" && "text-white"} w-fit`}
-        >
-          Work
-        </Link>
-        <Link
-          href="#about"
-          className={`${sectionInView === "about" && "text-white"} w-fit`}
-        >
-          About
-        </Link>
-        <Link
-          href="#skills"
-          className={`${sectionInView === "skills" && "text-white"} w-fit`}
-        >
-          Skills
-        </Link>
-        {/* <Link
-          href="#contact"
-          className={`${sectionInView === "contact" && "text-white"}  w-fit`}
-        >
-          Contact
-        </Link> */}
-      </ul>
+      <div className="bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f] rounded-2xl mt-4 std-backdrop-blur p-6">
+        <div className="grid grid-cols-1 gap-6">
+          <ul className="flex flex-col gap-4 text-white/25">
+            <Link
+              href="#home"
+              className={`${sectionInView === "home" && "text-white"} hover:text-white/50 transition-colors`}
+              onClick={() => onMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
+              href="#about"
+              className={`${sectionInView === "about" && "text-white"} hover:text-white/50 transition-colors`}
+              onClick={() => onMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link
+              href="#work"
+              className={`${sectionInView === "work" && "text-white"} hover:text-white/50 transition-colors`}
+              onClick={() => onMenuOpen(false)}
+            >
+              Projects
+            </Link>
+            <Link
+              href="#experiences"
+              className={`${sectionInView === "experiences" && "text-white"} hover:text-white/50 transition-colors`}
+              onClick={() => onMenuOpen(false)}
+            >
+              Experiences
+            </Link>
+            <Link
+              href="#skills"
+              className={`${sectionInView === "skills" && "text-white"} hover:text-white/50 transition-colors`}
+              onClick={() => onMenuOpen(false)}
+            >
+              Skills
+            </Link>
+            <Link
+              href="#education"
+              className={`${sectionInView === "education" && "text-white"} hover:text-white/50 transition-colors`}
+              onClick={() => onMenuOpen(false)}
+            >
+              Education
+            </Link>
+            <Link
+              href="#contact"
+              className={`${sectionInView === "contact" && "text-white"} hover:text-white/50 transition-colors`}
+              onClick={() => onMenuOpen(false)}
+            >
+              Contact
+            </Link>
+          </ul>
 
-      <div className="flex flex-col gap-3 z-20 items-center justify-center">
-        <Link
-          className="p-4 flex-1 flex justify-center w-full rounded-xl h-fit text-4xl visited:bg-[#E3D3BE] bg-gradient-to-r from-[#d9d9d915] to-[#7373731f] std-backdrop-blur"
-          target="_blank"
-          href="https://www.linkedin.com/in/vedantpancholi/"
-          data-blobity-radius="10"
-        >
-          <Icon icon="hugeicons:linkedin-01" />
-        </Link>
-
-        <div className="flex gap-3 w-full">
-          <Link
-            className="p-4 flex justify-center w-full rounded-xl h-fit text-2xl bg-gradient-to-r from-[#d9d9d915] to-[#7373731f] std-backdrop-blur"
-            target="_blank"
-            href="https://github.com/VedantPancholi"
-            data-blobity-radius="10"
-          >
-            <Icon icon="hugeicons:github" />
-          </Link>
-          {/* <Link
-            className="p-4 flex justify-center w-full rounded-xl h-fit text-2xl bg-gradient-to-r from-[#d9d9d915] to-[#7373731f] std-backdrop-blur"
-            target="_blank"
-            href="https://x.com/Ade_the_great"
-            data-blobity-radius="10"
-          >
-            <Icon icon="akar-icons:x-fill" />
-          </Link> */}
+          <div className="flex justify-center gap-4 pt-4 border-t border-white/10">
+            <Link
+              className="p-3 rounded-xl bg-gradient-to-r from-[#d9d9d915] to-[#7373731f] hover:bg-white/10 transition-colors"
+              target="_blank"
+              href="https://www.linkedin.com/in/vedantpancholi/"
+              data-blobity-radius="10"
+            >
+              <Icon icon="hugeicons:linkedin-01" className="text-2xl" />
+            </Link>
+            <Link
+              className="p-3 rounded-xl bg-gradient-to-r from-[#d9d9d915] to-[#7373731f] hover:bg-white/10 transition-colors"
+              target="_blank"
+              href="https://github.com/VedantPancholi"
+              data-blobity-radius="10"
+            >
+              <Icon icon="hugeicons:github" className="text-2xl" />
+            </Link>
+          </div>
         </div>
       </div>
     </motion.div>

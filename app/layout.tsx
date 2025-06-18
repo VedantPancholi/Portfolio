@@ -43,13 +43,13 @@ export const metadata: Metadata = {
         url: "",
         width: 1200,
         height: 630,
-        alt: "Vedant Pancholi — Aspiring Data Scientist",
+        alt: "Vedant Pancholi — Aspiring AI/ML Engineer",
       },
       {
         url: "",
         width: 800,
         height: 800,
-        alt: "Vedant Pancholi — Aspiring Data Scientist",
+        alt: "Vedant Pancholi — Aspiring AI/ML Engineer",
       },
     ],
     locale: "en-US",
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vedant Pancholi — Aspiring Data Scientist",
+    title: "Vedant Pancholi — Aspiring AI/ML Engineer",
     description:
-      "Aspiring Data Scientist/Software Engineer with expertise in Python, C++, and AI-driven solutions. Passionate about leveraging data analytics and software engineering to drive innovation and efficiency.",
+      "Aspiring AI/ML Engineer with expertise in Python, C++, and AI-driven solutions. Passionate about leveraging data analytics and software engineering to drive innovation and efficiency.",
     creator: "@VedantPancholi",
     images: [""],
   },

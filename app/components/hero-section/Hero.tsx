@@ -97,7 +97,7 @@ export default function Hero() {
           <span className="bg-gradient-to-br bg-clip-text text-transparent from-[#92e1e6] via-[#68aad9] to-[#3C84C7]">
             Vedant Pancholi
           </span>
-          <p>Aspiring ML & DL Engineer 🤖</p>
+          <p>Aspiring AI/ML Engineer </p>
         </motion.h1>
 
         <motion.p
@@ -105,8 +105,36 @@ export default function Hero() {
           animate={animateIn2}
           className="text-white/40  text-xl smm:text-2xl lg:text-3xl xl:text-4xl mt-3 smm:mt-6 "
         >
-          Transforming Analytical Insights into Scalable AI Solutions 🚀
+          I build scalable solutions that turn data into action 🚀
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.5, duration: 0.5 }}
+          className="flex flex-col sm:flex-row gap-4 mt-8 sm:mt-12"
+        >
+          <a
+            href="https://drive.google.com/file/d/1Aj6nbisZgdq2ulx7XPgHY5lnubgWyHZ7/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-3 px-5 py-2 rounded-xl font-semibold border border-blue-400/50 backdrop-blur-sm text-white hover:text-white hover:underline hover:underline-offset-4 transition-all duration-200"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            View Resume
+          </a>
+          <a
+            href="#work"
+            className="inline-flex items-center justify-center gap-3 px-5 py-2 rounded-xl font-semibold border border-white/20 backdrop-blur-sm text-white hover:text-white hover:underline hover:underline-offset-4 transition-all duration-200"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+            Explore Projects
+          </a>
+        </motion.div>
       </div>
 
       {/* IMAGE */}

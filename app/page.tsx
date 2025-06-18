@@ -1,7 +1,10 @@
 "use client";
 import Hero from "./components/hero-section/Hero";
-import Works from "./components/work-section/Works";
 import About from "./components/about-section/About";
+import Works from "./components/work-section/Works";
+import Experiences from "./components/experiences-section/Experiences";
+import Skills from "./components/skills-section/Skills";
+import Education from "./components/education-section/Education";
 import Contact from "./components/contact+footer/Contact";
 import Footer from "./components/contact+footer/Footer";
 import { initialBlobityOptions } from "@/utils/blobity.config";
@@ -13,8 +16,11 @@ export default function Home() {
   return (
     <main className="overflow-x-hidden sm:overflow-x-visible">
       <Hero />
-      <Works />
       <About />
+      <Works />
+      <Experiences />
+      <Skills />
+      <Education />
       <Contact />
       <Footer />
     </main>

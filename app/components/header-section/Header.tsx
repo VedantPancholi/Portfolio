@@ -29,34 +29,46 @@ export default function Header() {
             icon={`${menuOpen ? "gg:close" : "lucide:menu"}`}
           />
 
-          <ul className="hidden sm:flex gap-8 lg:gap-12 text-white/25">
+          <ul className="hidden sm:flex gap-8 lg:gap-12 text-xl text-white/25">
             <Link
               href="#home"
-              className={`${sectionInView === "home" && "text-white"} `}
+              className={`${sectionInView === "home" && "text-white"} hover:text-white/50 transition-colors`}
             >
               Home
             </Link>
             <Link
-              href="#work"
-              className={`${sectionInView === "work" && "text-white"} `}
-            >
-              Work
-            </Link>
-            <Link
               href="#about"
-              className={`${sectionInView === "about" && "text-white"} `}
+              className={`${sectionInView === "about" && "text-white"} hover:text-white/50 transition-colors`}
             >
               About
             </Link>
             <Link
+              href="#work"
+              className={`${sectionInView === "work" && "text-white"} hover:text-white/50 transition-colors`}
+            >
+              Projects
+            </Link>
+            <Link
+              href="#experiences"
+              className={`${sectionInView === "experiences" && "text-white"} hover:text-white/50 transition-colors`}
+            >
+              Experiences
+            </Link>
+            <Link
               href="#skills"
-              className={`${sectionInView === "skills" && "text-white"} `}
+              className={`${sectionInView === "skills" && "text-white"} hover:text-white/50 transition-colors`}
             >
               Skills
             </Link>
             <Link
+              href="#education"
+              className={`${sectionInView === "education" && "text-white"} hover:text-white/50 transition-colors`}
+            >
+              Education
+            </Link>
+            <Link
               href="#contact"
-              className={`${sectionInView === "contact" && "text-white"} `}
+              className={`${sectionInView === "contact" && "text-white"} hover:text-white/50 transition-colors`}
             >
               Contact
             </Link>
