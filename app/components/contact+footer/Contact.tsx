@@ -75,7 +75,7 @@ export default function Contact() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-white/70 text-lg md:text-xl text-center mb-12 max-w-3xl mx-auto"
         >
-          Feel free to reach out to me for any opportunities or collaborations. I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+          Feel free to reach out to me for any opportunities or collaborations. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">

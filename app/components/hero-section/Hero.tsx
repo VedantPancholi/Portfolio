@@ -115,7 +115,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 mt-8 sm:mt-12"
         >
           <a
-            href="https://drive.google.com/file/d/1Aj6nbisZgdq2ulx7XPgHY5lnubgWyHZ7/view?usp=sharing"
+            href="https://drive.google.com/file/d/1RLBTypIUwLm5ZwFXA6VMnQ2S_qyS_T5d/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 px-5 py-2 rounded-xl font-semibold border border-blue-400/50 backdrop-blur-sm text-white hover:text-white hover:underline hover:underline-offset-4 transition-all duration-200"
